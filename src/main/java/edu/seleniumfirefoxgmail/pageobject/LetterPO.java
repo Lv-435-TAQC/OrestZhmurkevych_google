@@ -19,6 +19,9 @@ public class LetterPO extends CommonPage {
     @FindBy(xpath = "//div[@class = 'T-I J-J5-Ji aoO v7 T-I-atl L3' and @role = 'button']")
     private WebElement sendButton;
 
+    @FindBy(xpath = "//div[@class = 'vh']")
+    private WebElement successfulSendingIndicator;
+
     public void openComposeLetterForm() {
         composeButton.click();
     }
@@ -34,5 +37,6 @@ public class LetterPO extends CommonPage {
 
     public void sendLetter() {
         sendButton.click();
+        (new WebDriverWait(driver, 30)).until(ExpectedConditions.invisibilityOf(successfulSendingIndicator));
     }
 }

@@ -13,7 +13,6 @@ public class GmailTest {
 
     private GmailLoginBO gmailLoginBO = new GmailLoginBO();
 
-    //TODO add explicit wait for the letter to sent
     @Test
     public void sendLetterWithDateInSubjectTest() {
         SendLetterBO sendLetterBO = new SendLetterBO();
