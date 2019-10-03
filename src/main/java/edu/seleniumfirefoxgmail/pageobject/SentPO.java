@@ -6,18 +6,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static edu.seleniumfirefoxgmail.util.constants.LocatorsConstants.*;
+
 public class SentPO extends CommonPage {
 
-    @FindBy(xpath = "//div[@class = 'TN bzz aHS-bnu']")
+    @FindBy(xpath = SENT_MAIL_SECTION_XPATH)
     private WebElement sentMailSection;
 
-    @FindBy(xpath = "//button[@class = 'gb_vf' and @gh = 'sda']")
+    @FindBy(xpath = SENT_MAIL_FILTER_BUTTON_XPATH)
     private WebElement sentMailFilterButton;
 
-    @FindBy(xpath = "//input[@class = 'ZH nr aQd']")
+    @FindBy(xpath = SENT_MAIL_FILTER_SUBJECT_FIELD_XPATH)
     private WebElement sentMailFilterSubjectField;
 
-    @FindBy(xpath = "//div[@class = 'T-I J-J5-Ji Zx aQe T-I-atl L3' and @role = 'button']")
+    @FindBy(xpath = SUBMIT_FILTER_BUTTON_XPATH)
     private WebElement submitFilterButton;
 
     public void showSentMail() {

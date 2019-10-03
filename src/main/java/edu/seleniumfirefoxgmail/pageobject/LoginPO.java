@@ -5,18 +5,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static edu.seleniumfirefoxgmail.util.constants.LocatorsConstants.*;
+
 public class LoginPO extends CommonPage {
 
-    @FindBy(css = "input[type = 'email']")
+    @FindBy(css = USER_LOGIN_FIELD_CSS_LOCATOR)
     private WebElement userLoginField;
 
-    @FindBy(css = "div[id = 'identifierNext']")
+    @FindBy(css = SUBMIT_LOGIN_BUTTON_CSS_LOCATOR)
     private WebElement submitLoginButton;
 
-    @FindBy(xpath = "//input[@type = 'password']")
+    @FindBy(xpath = USER_PASSWORD_FIELD_XPATH)
     private WebElement userPasswordField;
 
-    @FindBy(xpath = "//div[@id = 'passwordNext']")
+    @FindBy(xpath = SUBMIT_PASSWORD_BUTTON_XPATH)
     private WebElement submitPasswordButton;
 
     public void setUserLogin(final String login) {

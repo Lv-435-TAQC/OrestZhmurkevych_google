@@ -5,22 +5,25 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static edu.seleniumfirefoxgmail.util.constants.LocatorsConstants.*;
+
+
 public class LetterPO extends CommonPage {
 
-    @FindBy(xpath = "//div[@role = 'button' and @jslog= '20510; u014N:cOuCgd,Kr2w4b']")
+    @FindBy(xpath = COMPOSE_BUTTON_XPATH)
     private WebElement composeButton;
 
-    @FindBy(name = "to")
+    @FindBy(name = ADDRESS_FIELD_LOCATOR)
     private WebElement addressField;
 
-    @FindBy(name = "subjectbox")
+    @FindBy(name = SUBJECT_FIELD_LOCATOR)
     private WebElement subjectField;
 
-    @FindBy(xpath = "//div[@class = 'T-I J-J5-Ji aoO v7 T-I-atl L3' and @role = 'button']")
+    @FindBy(xpath = SEND_BUTTON_XPATH)
     private WebElement sendButton;
 
-    @FindBy(xpath = "//div[@class = 'vh']")
-    private WebElement successfulSendingIndicator;
+    @FindBy(xpath = SUCCESSFUL_SENDING_INDICATOR_XPATH)
+    private WebElement indicatorOfSuccessfulSending;
 
     public void openComposeLetterForm() {
         composeButton.click();
@@ -37,6 +40,8 @@ public class LetterPO extends CommonPage {
 
     public void sendLetter() {
         sendButton.click();
-        (new WebDriverWait(driver, 30)).until(ExpectedConditions.invisibilityOf(successfulSendingIndicator));
+//        if (indicatorOfSuccessfulSending.elementIsIndicatorOfSuccessfulSending()) {
+            (new WebDriverWait(driver, 30)).until(ExpectedConditions.invisibilityOf(indicatorOfSuccessfulSending));
+//        }
     }
 }
